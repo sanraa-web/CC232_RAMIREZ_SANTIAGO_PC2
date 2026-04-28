@@ -56,30 +56,8 @@ public:
     Deque() : a(1), j(0), n(0) {}
     virtual ~Deque() = default;
 
-    int size() const {
-        return n;
-    }
-
     bool empty() const {
         return n == 0;
-    }
-
-    T get(int i) const {
-        assert(0 <= i && i < n);
-        return a[(j + i) % a.length()].value;
-    }
-
-    int getIndex(int i) const {
-        assert(0 <= i && i < n);
-        return a[(j + i) % a.length()].index;
-    }
-
-    T set(int i, T x) {
-        assert(0 <= i && i < n);
-        int idx = (j + i) % a.length();
-        T y = a[idx].value;
-        a[idx].value = x;
-        return y;
     }
 
     virtual void add(int i, T x, int index = -1) {
@@ -100,11 +78,6 @@ public:
         }
         a[(j + i) % a.length()] = Node(x, index);
         ++n;
-    }
-
-    bool add(T x, int index = -1) {
-        add(n, x, index);
-        return true;
     }
 
     T remove(int i) {
@@ -149,15 +122,6 @@ public:
         add(n, x, index);
     }
 
-    void addFront(T x, int index = -1) {
-        add(0, x, index);
-    }
-
-    void clear() {
-        a = array<Node>(1);
-        j = 0;
-        n = 0;
-    }
 };
 
-} // namespace ods
+}
