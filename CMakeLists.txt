@@ -5,23 +5,35 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Especificar el directorio include
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-# Crear el ejecutable
-add_executable(solution src/Solution.cpp)
+# Archivos fuente comunes
+set(COMMON_SOURCES src/maxScore.cpp)
+
+# Compilar todos los demos
+file(GLOB DEMO_SOURCES demos/*.cpp)
+foreach(demo ${DEMO_SOURCES})
+    get_filename_component(demo_name ${demo} NAME_WE)
+    add_executable(${demo_name} ${demo} ${COMMON_SOURCES})
+endforeach()
+
+# Compilar todos los tests
+file(GLOB TEST_SOURCES tests/*.cpp)
+foreach(test ${TEST_SOURCES})
+    get_filename_component(test_name ${test} NAME_WE)
+    add_executable(${test_name} ${test} ${COMMON_SOURCES})
+endforeach()
 
 # Habilitar testing
 enable_testing()
+foreach(test ${TEST_SOURCES})
+    get_filename_component(test_name ${test} NAME_WE)
+    add_test(NAME ${test_name} COMMAND ${test_name})
+endforeach()
 
-# Agregar tests si existen
-if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/tests/tests.cpp)
-    add_executable(tests tests/tests.cpp)
-    add_test(NAME AllTests COMMAND tests)
-endif()
-
-# Habilitar flags de compilación útiles
+# Habilitar flags de compilación
 if(MSVC)
-    target_compile_options(solution PRIVATE /W4)
+    add_compile_options(/W4)
 else()
-    target_compile_options(solution PRIVATE -Wall -Wextra -pedantic)
+    add_compile_options(-Wall -Wextra -pedantic)
 endif()

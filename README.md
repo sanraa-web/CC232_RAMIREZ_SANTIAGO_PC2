@@ -1,29 +1,55 @@
-# PC2 - LeetCode 1696 - Jump Game VI
+## PC2 - CC232
 
-Santiago Alejandro Ramirez Aguilar
+### Estudiante
+- Nombre: Santiago Alejandro Ramirez Aguilar
+- Código: 20231438F
+- Problema asignado: LeetCode 1696 - Jump Game VI
+- Enlace: https://leetcode.com/problems/jump-game-vi/description/
 
 ## Problema asignado
 **https://leetcode.com/problems/jump-game-vi/**
 
----
+### Tema principal
+- Semana: 3
+- Estructura o técnica principal: Deque
 
-## Especificación del problema
+### Resumen de la solución
+Se utiliza programación dinámica con una deque de máximos decreciente. `dp[i]` almacena la máxima puntuación hasta la posición `i`. Para cada posición, se consulta el máximo de `dp` en el rango `[i-k, i-1]` usando una deque que mantiene los índices ordenados por valor de forma decreciente.
 
-Estás en el índice `0` de un arreglo de enteros `nums` de tamaño `n`. En cada paso, puedes saltar hacia adelante un máximo de `k` posiciones, pero no puedes exceder los límites del arreglo. Tu objetivo es alcanzar el último índice con la máxima puntuación posible.
+### Complejidad
+- Tiempo: O(n)
+- Espacio: O(n)
 
-La puntuación de un camino se define como la suma de los valores de todos los índices visitados durante el trayecto.
+### Invariante o idea clave
+La deque mantiene índices en orden decreciente de sus valores `dp`. Al procesar cada posición `i`, se remove el índice más antiguo si está fuera del rango válido `[i-k, i-1]`, y se añade el nuevo índice manteniendo la propiedad decreciente.
 
-**Entrada:**
-- Un arreglo de enteros `nums`.
-- Un entero `k`.
+### Archivos relevantes
+- include/
+- src/
+- tests/
+- demos/
 
-**Salida:**
-- Un entero que represente la puntuación máxima que puedes obtener al llegar al final del arreglo.
+### Compilación
+```bash
+cmake -S . -B build
+cmake --build build
+```
 
-**Restricciones:**
-- `1 <= nums.length, k <= 10^5`
-- `-10^4 <= nums[i] <= 10^4`
-- El resultado final está garantizado para representarse dentro de un entero de 32 bits con signo.
+### Ejecución
+```bash
+./build/solution.exe
+```
 
----
+### Casos de prueba
+Describe al menos 3 casos:
+1.
+2.
+3.
+
+### Historial de commits
+Indica que el historial debe verse en el video.
+
+### Declaración de autoría
+Declaro que entiendo el código entregado, que puedo explicarlo, compilarlo, ejecutarlo y modificarlo sin ayuda externa durante la grabación.
+
 

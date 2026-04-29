@@ -1,6 +1,9 @@
 #include <iostream>
 #include <vector>
 #include "deque.h"
+#include "maxScore.h"
+
+namespace algorithm {
 
 int maxScore(std::vector<int>& nums, int k) {
     int n = nums.size();
@@ -24,20 +27,6 @@ int maxScore(std::vector<int>& nums, int k) {
         
         dq.addBack(i);
     }
-    
     return dp[n - 1];
 }
-
-int main() {
-    // ejm1 del leetcode
-    std::vector<int> num1 = {1, -1, -2, 4, -7, 3};
-    int k1 = 2;
-    int result1 = maxScore(num1, k1);
-    
-    std::cout << "ejemplo 1:" << std::endl;
-    std::cout << "nums = [1,-1,-2,4,-7,3], k = 2" << std::endl;
-    std::cout << "salida: " << result1 << std::endl;
-    
-
-    return 0;
-}
+} 
