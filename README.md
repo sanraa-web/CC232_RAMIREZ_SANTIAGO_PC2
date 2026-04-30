@@ -31,13 +31,15 @@ La deque mantiene índices en orden decreciente de sus valores `dp`. Al procesar
 
 ### Compilación
 ```bash
-cmake -S . -B build
-cmake --build build
+mkdir build
+cd build
+cmake ..
+cmake --build .
 ```
 
 ### Ejecución
 ```bash
-./build/solution.exe
+./build/demo_maxScore.exe
 ```
 
 ### Casos de prueba

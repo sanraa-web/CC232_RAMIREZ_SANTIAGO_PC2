@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "maxscore.h"
+#include "maxScore.h"
 
 int main() {
     std::vector<int> nums = {1, -1, -2, 4, -7, 3};

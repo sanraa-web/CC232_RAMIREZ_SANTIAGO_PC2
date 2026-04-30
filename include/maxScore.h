@@ -2,5 +2,5 @@
 #include <vector>
 
 namespace algorithm {
-    int maxScore(std::vector<int>& nums, int k);
+    int maxScore(const std::vector<int>& nums, int k);
 }

@@ -5,7 +5,7 @@
 
 namespace algorithm {
 
-int maxScore(std::vector<int>& nums, int k) {
+int maxScore(const std::vector<int>& nums, int k) {
     int n = nums.size();
     std::vector<int> dp(n);
     
@@ -29,4 +29,4 @@ int maxScore(std::vector<int>& nums, int k) {
     }
     return dp[n - 1];
 }
-} 
+}
