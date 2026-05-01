@@ -58,6 +58,8 @@ int main() {
     assert(maxScore(vector<int>{5,1,10,2,8,3,7}, 2) == 36);
     assert(maxScore(vector<int>{1,1,1,100,1,1,1}, 3) == 106);
 
+    assert(maxScore(vector<int>{100, -200}, 2) == algorithm::maxScoreSlow(vector<int>{100, -200}, 2));
+
     cout << "No hubo errores en las pruebas" << endl;
     return 0;
 }
