@@ -58,6 +58,7 @@ Describe al menos 3 casos:
 - Commit 4: Reorganizo las ubicaciones del repo; Solution.cpp se separo en maxScore.h + maxScore.cpp (algoritmo) y demo_maxScore.cpp (demo); modifico los demas archivos
 - Commit 5: Se agrego CasosBorde.cpp que es el test
 - Commit 6: Se renombro CasosBorde a pruebas.cpp ; se agrego benchmark.cpp ; se agrego la documentacion para ambos y se hizo ajustes en maxScore, CMakelist
+- Commit 7: Caso reto agregado y commit 8 solo se cambio la vercion de c++11 a c++17
 
 ### Declaración de autoría
 Declaro que entiendo el código entregado, que puedo explicarlo, compilarlo, ejecutarlo y modificarlo sin ayuda externa durante la grabación.
