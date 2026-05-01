@@ -17,11 +17,18 @@ foreach(demo ${DEMO_SOURCES})
     add_executable(${demo_name} ${demo} ${COMMON_SOURCES})
 endforeach()
 
-# Compilar todos los tests
+# Compilar test
 file(GLOB TEST_SOURCES tests/*.cpp)
 foreach(test ${TEST_SOURCES})
     get_filename_component(test_name ${test} NAME_WE)
     add_executable(${test_name} ${test} ${COMMON_SOURCES})
+endforeach()
+
+# Compilar benchmarks
+file(GLOB BENCHMARK_SOURCES benchmark/*.cpp)
+foreach(benchmark ${BENCHMARK_SOURCES})
+    get_filename_component(benchmark_name ${benchmark} NAME_WE)
+    add_executable(${benchmark_name} ${benchmark} ${COMMON_SOURCES})
 endforeach()
 
 # Habilitar testing

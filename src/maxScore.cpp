@@ -6,6 +6,11 @@
 namespace algorithm {
 
 int maxScore(const std::vector<int>& nums, int k) {
+
+    if (nums.empty() || k <= 0) {
+        return 0;
+    }
+
     int n = nums.size();
     std::vector<int> dp(n);
     

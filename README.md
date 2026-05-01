@@ -24,10 +24,11 @@ Se utiliza programación dinámica con una deque de máximos decreciente. `dp[i]
 La deque mantiene índices en orden decreciente de sus valores `dp`. Al procesar cada posición `i`, se remove el índice más antiguo si está fuera del rango válido `[i-k, i-1]`, y se añade el nuevo índice manteniendo la propiedad decreciente.
 
 ### Archivos relevantes
-- include/
-- src/
-- tests/
-- demos/
+- include/deque.h ; maxScore.h
+- src/maxScore.cpp
+- tests/CasosBorde.cpp
+- demos/demo_maxScore.cpp
+- benchmak/benchmark.cpp
 
 ### Compilación
 ```bash
@@ -40,18 +41,23 @@ cmake --build .
 ### Ejecución
 ```bash
 ./build/demo_maxScore.exe
+./build/pruebas.exe
+./build/benchmark.exe
 ```
 
 ### Casos de prueba
 Describe al menos 3 casos:
-1.
-2.
-3.
+1. `[]` con k=1: Caso donde el array esta vacio, devuelve el resultado de 0 automáticamente.
+2. `[10000,10000,10000]` con k=2: Valores extremos grandes para verificar precisión. Resultado: 30000
+3. `[1,2,3,4,5,6,7,8]` con k=2: Secuencia creciente que verifica correctamente el deque. Resultado: 36
 
 ### Historial de commits
-Indica que el historial debe verse en el video.
+- Commit 1: Agrego README.md, CMakelist y Actividad1
+- Commit 2: implemento header deque.h
+- Commit 3: modifico deque.h y CMakelist, adicionalmente se agrego la demo temprana Solution.cpp
+- Commit 4: Reorganizo las ubicaciones del repo; Solution.cpp se separo en maxScore.h + maxScore.cpp (algoritmo) y demo_maxScore.cpp (demo); modifico los demas archivos
+- Commit 5: Se agrego CasosBorde.cpp que es el test
+- Commit 6: Se renombro CasosBorde a pruebas.cpp ; se agrego benchmark.cpp ; se agrego la documentacion para ambos y se hizo ajustes en maxScore, CMakelist
 
 ### Declaración de autoría
 Declaro que entiendo el código entregado, que puedo explicarlo, compilarlo, ejecutarlo y modificarlo sin ayuda externa durante la grabación.
-
-

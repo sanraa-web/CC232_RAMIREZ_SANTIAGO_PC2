@@ -3,9 +3,13 @@ using namespace std;
 #include <cassert>
 #include "deque.h"
 #include "maxScore.h"
+#include <iostream>
 
 int main() {
     using algorithm::maxScore;
+    //vector vacio y k=0
+    assert(maxScore(vector<int>{}, 1) == 0);   
+    assert(maxScore(vector<int>{1,2,3}, 0) == 0); 
     // unitarios y tribiales
     assert(maxScore(vector<int>{-100}, 1) == -100);
     assert(maxScore(vector<int>{0}, 1) == 0);
@@ -48,11 +52,12 @@ int main() {
         for (int i = 0; i < 15; ++i) v[i] = (i % 2 == 0) ? 10 : -3;
         assert(maxScore(v, 2) == 80);
     }
-    //Casos especiales para deque
+    //Casos especiales para deque (secuencias)
     assert(maxScore(vector<int>{1,2,3,4,5,6,7,8}, 2) == 36);
     assert(maxScore(vector<int>{10,9,8,7,6,5,4}, 1) == 49);
     assert(maxScore(vector<int>{5,1,10,2,8,3,7}, 2) == 36);
     assert(maxScore(vector<int>{1,1,1,100,1,1,1}, 3) == 106);
 
+    cout << "No hubo errores en las pruebas" << endl;
     return 0;
 }
