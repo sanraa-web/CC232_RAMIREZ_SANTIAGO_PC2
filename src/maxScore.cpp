@@ -45,7 +45,7 @@ int maxScoreSlow(const std::vector<int>& nums, int k){ // Complejidad O([k-1]n)
     
     dp[0] = nums[0];
 
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i < n; i++)
     {
         int izq = std::max(0, i-k);
 
